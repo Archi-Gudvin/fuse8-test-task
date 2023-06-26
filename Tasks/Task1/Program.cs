@@ -1,8 +1,14 @@
-﻿//количество наборов
-int NumberOfSets = Convert.ToInt32(Console.ReadLine());
-
-if (NumberOfSets <= Math.Pow(10, 4) && NumberOfSets >= 1)
+﻿try
 {
+    //количество наборов
+    int NumberOfSets = Convert.ToInt32(Console.ReadLine());
+
+    if (NumberOfSets > Math.Pow(10, 4) || NumberOfSets < 1)
+    {
+        Console.WriteLine("Превышен лимит числа");
+    }
+
+
     //общие суммы к оплате наборам
     List<int> AmountToBePaid = new List<int>(NumberOfSets);
 
@@ -11,9 +17,9 @@ if (NumberOfSets <= Math.Pow(10, 4) && NumberOfSets >= 1)
         //количество купленных товаров
         int NumberOfGoods = Convert.ToInt32(Console.ReadLine());
 
-        if (NumberOfGoods > 2 * Math.Pow(10, 5) && NumberOfGoods < 1)
+        if (NumberOfGoods > 2 * Math.Pow(10, 5) || NumberOfGoods < 1)
         {
-            Console.WriteLine("Превышен лимит числа"); break;
+            Console.WriteLine("Превышен лимит числа");
         }
 
         //цены купленных товаров
@@ -27,9 +33,9 @@ if (NumberOfSets <= Math.Pow(10, 4) && NumberOfSets >= 1)
             PricesOfGoods.Add(Convert.ToInt32(prices[p]));
         }
 
-        if (PricesOfGoods.Count > Math.Pow(10, 4) && PricesOfGoods.Count < 1)
+        if (PricesOfGoods.Count > Math.Pow(10, 4) || PricesOfGoods.Count < 1)
         {
-            Console.WriteLine("Превышен лимит числа"); break;
+            Console.WriteLine("Превышен лимит числа");
         }
 
         PricesOfGoods.Sort();
@@ -56,5 +62,6 @@ if (NumberOfSets <= Math.Pow(10, 4) && NumberOfSets >= 1)
 
     Console.ReadLine();
 }
-else { Console.WriteLine("Превышен лимит числа"); }
-    
+catch (Exception ex) { Console.WriteLine(ex.Message); }
+
+
