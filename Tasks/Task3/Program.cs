@@ -82,7 +82,7 @@ public class Program
                 {
                     words.Add(word);
                 }
-                else { Console.WriteLine("Слово не валидно"); throw new Exception() }
+                else { Console.WriteLine("Слово не валидно"); throw new Exception(); }
             }
 
             //количество запросов
@@ -109,7 +109,7 @@ public class Program
                 {
                     requests.Add(request);
                 }
-                else { Console.WriteLine("Запрос не валиден"); throw new Exception() }
+                else { Console.WriteLine("Запрос не валиден"); throw new Exception(); }
 
                 string maxRhymeWord = FindMaxRhymeWord(request, words);
 
